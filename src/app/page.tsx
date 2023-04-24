@@ -1,9 +1,11 @@
 import Button from "@/components/ui/Button";
-export default function Home() {
+import { db } from "@/lib/db";
+export default async function Home() {
+  await db.set("name", "John");
   return (
     <div>
       <h1 className="text-red-300">Hello world</h1>
-      <Button>Click</Button>
+      <Button variant="ghost">Click</Button>
     </div>
   );
 }
